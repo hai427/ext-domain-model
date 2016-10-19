@@ -64,7 +64,7 @@ public struct Money: CustomStringConvertible {
     if to.currency == self.currency {
       return Money(amount: self.amount + to.amount, currency: to.currency)
     }
-    var newMoneyConversion = self.convert(to.currency)
+    let newMoneyConversion = self.convert(to.currency)
     return Money(amount: to.amount + newMoneyConversion.amount, currency: to.currency)
   }
   
@@ -74,6 +74,12 @@ public struct Money: CustomStringConvertible {
     }
     return Money(amount: self.amount - self.convert(from.currency).amount, currency: from.currency)
   }
+}
+
+protocol Mathematics {
+  func add(_ to: Money) -> Money
+  
+  func subtract(_ to: Money) -> Money
 }
 
 ////////////////////////////////////

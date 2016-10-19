@@ -8,7 +8,7 @@
 
 import XCTest
 
-import SimpleDomainModel
+import ExtDomainModel
 
 //////////////////
 // MoneyTests
