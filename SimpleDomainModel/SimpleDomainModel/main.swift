@@ -82,6 +82,14 @@ protocol Mathematics {
   func subtract(_ to: Money) -> Money
 }
 
+extension Double {
+  var USD: Money { return Money(amount: Int(self), currency: "USD")}
+  var GBP: Money { return Money(amount: Int(self), currency: "GBP")}
+  var EUR: Money { return Money(amount: Int(self), currency: "EUR")}
+  var CAN: Money { return Money(amount: Int(self), currency: "CAN")}
+  var YEN: Money { return Money(amount: Int(self), currency: "YEN")}
+}
+
 ////////////////////////////////////
 // Job
 //
